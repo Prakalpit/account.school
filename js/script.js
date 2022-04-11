@@ -7,7 +7,7 @@ function hover(element) {
 }
 
 function unhover(element) {
-    element.setAttribute('src', 'img/khaataa-close2.png');
+    element.setAttribute('src', 'img/khaataa-close3.png');
 }
 
 // For FeesManagementModal
