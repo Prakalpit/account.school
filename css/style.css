@@ -215,8 +215,7 @@ strong {font-weight: bold}
 .my-button-2,
 .my-button-3,
 .my-button-4,
-.my-button-5,
-.my-button-6{
+.my-button-5 {
     background-color: var(--clr-accent);
     border: .124em;
     border-radius: 8px;
@@ -233,8 +232,7 @@ strong {font-weight: bold}
 .my-button-2:hover,
 .my-button-3:hover,
 .my-button-4:hover,
-.my-button-5:hover,
-.my-button-6:hover{
+.my-button-5:hover{
     background-color: rgb(187 93 22);
     border: .124em;
     border-radius: 12px;
@@ -290,23 +288,13 @@ strong {font-weight: bold}
     content:"अनलाइन कक्षाहरु";
 }
 
-/*Button 5*/
+
+
 .my-button-5:hover span {
     display:none
 }
 
 .my-button-5:hover::before {
-    content:"अनलाइन हाजिरी";
-    content:"अनलाइन प्रशासन";
-}
-
-
-
-.my-button-6:hover span {
-    display:none
-}
-
-.my-button-6:hover::before {
     content:"अनलाइन हाजिरी";
 }
 
