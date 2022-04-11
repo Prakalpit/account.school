@@ -38,14 +38,66 @@
     </div>
 
     <div class="btns">
-        <button class="my-button-1"><span>Fees Management</span></button>
-        <button class="my-button-2" ><span>Exam Management</span></button>
-        <button class="my-button-3"><span>Notifications</span></button>
-        <button class="my-button-4"><span>Online Classes</span></button>
-        <button class="my-button-5"><span>And More....</span></button>
+        <button class="my-button-1" id="FeesModalBTN"><span>Fees Management</span></button>
+        <button class="my-button-2" id="ExamModalBTN"><span>Exam Management</span></button>
+        <button class="my-button-3" id="NotificationBTN"><span>Notifications</span></button>
+        <button class="my-button-4" id="OnlineClassBTN"><span>Online Classes</span></button>
+        <button class="my-button-5" id="AndMoreBTN"><span>And More....</span></button>
     </div>
 
 </section>
+
+<!-- For Fees Management -->
+<div class="AboutMeModal" id="FeesManagementModal">
+    <div class="modal-content">
+        <span class="closeBtn" id="closebtn__">&times;</span>
+        <br><br><br>
+        Allocate fees and generate bills, add instant discounts or fines.
+    </div>
+</div>
+
+
+<!-- For Exam Management -->
+<div class="AboutMeModal" id="ExamManagementModal">
+    <div class="modal-content">
+        <span class="closeBtn" id="closebtn__emb">&times;</span>
+        <br><br><br>
+        Conduct Examination, generate  Report Card and track Students’ Progress.
+    </div>
+</div>
+
+<!-- For Notification -->
+<div class="AboutMeModal" id="NotificationModal">
+    <div class="modal-content">
+        <span class="closeBtn" id="closebtn__n">&times;</span>
+        <br><br><br>
+        Issue alerts regarding  examinations, ECA events, fees etc. simply using the system for free.
+    </div>
+</div>
+
+<!-- For OnlineClasses -->
+<div class="AboutMeModal" id="OnlineClassModal">
+    <div class="modal-content">
+        <span class="closeBtn" id="closebtn__oc">&times;</span>
+        <br><br><br>
+        Assign and collect homework online. Easily integrate video conferencing
+        platforms such as Google Meet, Zoom & Microsoft Team to simplify online learning and
+        teaching process.
+    </div>
+</div>
+
+<!-- For AndMore -->
+<div class="AboutMeModal" id="AndMoreModal">
+    <div class="modal-content">
+        <span class="closeBtn" id="closebtn__AM">&times;</span>
+        <br><br><br>
+        Mark the attendance & create an error-free timetable. Do classroom-allocation, subject-allocation to teachers.
+        Simplify admission tracking, document submission, batch allotment, admission form customization and more.
+
+    </div>
+</div>
+
+
 
 <footer class="footer">
     <img src="img/pp.png" alt="Pratoli" class="MainCompLogo" height="500" width="500">
@@ -55,15 +107,7 @@
 </footer>
                         <br>
                         <script src="js/script.js"></script>
-<script>
-    function hover(element) {
-        element.setAttribute('src', 'img/khaata-open.png');
-    }
 
-    function unhover(element) {
-        element.setAttribute('src', 'img/khaataa-close2.png');
-    }
-</script>
 
 </body>
 </html>

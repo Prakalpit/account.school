@@ -1,37 +1,89 @@
-// create a const navtoggle
-const NavToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav-link')
-
-NavToggle.addEventListener('click', () =>{
-    document.body.classList.toggle('nav-open')
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', ()=>{
-        document.body.classList.remove('nav-open');
-    })
-})
-
-//copyright date increaser
-
 let d = new Date();
 let y = d.getFullYear();
 document.querySelector('.copyright').innerText = y ;
 
-// for modal of about me page
-const AboutMeModal = document.getElementById('AboutMeModal');
-const modalBtn = document.getElementById('LogInModal');//this is for the button
-
-const CloseBtn = document.getElementById('closebtn__'); //close sign x
-
-
-modalBtn.addEventListener('click', OpenModal)
-CloseBtn.addEventListener('click', CloseModal)
-
-function OpenModal() {
-    AboutMeModal.style.display ='block';
+function hover(element) {
+    element.setAttribute('src', 'img/khaata-open.png');
 }
 
-function CloseModal(){
-    AboutMeModal.style.display ='none';
+function unhover(element) {
+    element.setAttribute('src', 'img/khaataa-close2.png');
+}
+
+// For FeesManagementModal
+const FeesManagementModal = document.getElementById('FeesManagementModal');
+const modalBtnFM = document.getElementById('FeesModalBTN');
+const CloseBtnFM = document.getElementById('closebtn__');
+
+modalBtnFM.addEventListener('click', OpenModalFM)
+CloseBtnFM.addEventListener('click', CloseModalFM)
+
+function OpenModalFM() {
+    FeesManagementModal.style.display ='block';
+}
+function CloseModalFM(){
+    FeesManagementModal.style.display ='none';
+}
+
+// For Exam Management
+const ExamManagementModal = document.getElementById('ExamManagementModal');
+const modalBtnEM = document.getElementById('ExamModalBTN');
+const CloseBtnEM = document.getElementById('closebtn__emb');
+
+modalBtnEM.addEventListener('click', OpenModalEM)
+CloseBtnEM.addEventListener('click', CloseModalEM)
+
+function OpenModalEM() {
+    ExamManagementModal.style.display ='block';
+}
+function CloseModalEM(){
+    ExamManagementModal.style.display ='none';
+}
+
+
+// For Notification
+const NotificationModal = document.getElementById('NotificationModal');
+const modalBtnN = document.getElementById('NotificationBTN');
+const CloseBtnN = document.getElementById('closebtn__n');
+
+modalBtnN.addEventListener('click', OpenModalN)
+CloseBtnN.addEventListener('click', CloseModalN)
+
+function OpenModalN() {
+    NotificationModal.style.display ='block';
+}
+function CloseModalN(){
+    NotificationModal.style.display ='none';
+}
+
+
+// For Online Class
+const OnlineClassModal = document.getElementById('OnlineClassModal');
+const modalBtnOC = document.getElementById('OnlineClassBTN');
+const CloseBtnOC = document.getElementById('closebtn__oc');
+
+modalBtnOC.addEventListener('click', OpenModalOC)
+CloseBtnOC.addEventListener('click', CloseModalOC)
+
+function OpenModalOC() {
+    OnlineClassModal.style.display ='block';
+}
+function CloseModalOC(){
+    OnlineClassModal.style.display ='none';
+}
+
+
+// For And More
+const AndMoreModal = document.getElementById('AndMoreModal');
+const modalBtnAM = document.getElementById('AndMoreBTN');
+const CloseBtnAM = document.getElementById('closebtn__AM');
+
+modalBtnAM.addEventListener('click', OpenModalAM)
+CloseBtnAM.addEventListener('click', CloseModalAM)
+
+function OpenModalAM() {
+    AndMoreModal.style.display ='block';
+}
+function CloseModalAM(){
+    AndMoreModal.style.display ='none';
 }
