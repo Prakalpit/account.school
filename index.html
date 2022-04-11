@@ -19,7 +19,8 @@
 
 
 <section class="intro" id="h">
-    <a href="login.html"><img src="img/khaata.png" alt="<praka/pit>" class="intro__image" id="LogInModal"></a>
+    <a href="login.html"><img id="my-img" src="img/khaata-open.png" alt="Khaataa" class="intro__image" onmouseover="hover(this);" onmouseout="unhover(this);"></a>
+
 </section>
 
 
@@ -41,7 +42,7 @@
         <button class="my-button-2" ><span>Exam Management</span></button>
         <button class="my-button-3"><span>Notifications</span></button>
         <button class="my-button-4"><span>Online Classes</span></button>
-        <button class="my-button-5"><span>Online Attendance</span></button>
+        <button class="my-button-5"><span>And More....</span></button>
     </div>
 
 </section>
@@ -54,6 +55,16 @@
 </footer>
                         <br>
                         <script src="js/script.js"></script>
+<script>
+    function hover(element) {
+        element.setAttribute('src', 'img/khaata-open.png');
+    }
+
+    function unhover(element) {
+        element.setAttribute('src', 'img/khaataa-close.png');
+    }
+
+</script>
 
 </body>
 </html>
