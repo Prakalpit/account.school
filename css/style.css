@@ -1,0 +1,468 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: "Source Sans Pro", sans-serif;
+    --ff-secondary: "Source Code Pro", monospace;
+
+    --fw-reg:300;
+    --fw-bold:900;
+
+    --clr-light:#fff;
+    --clr-dark:#303030;
+    /*--clr-accent:#16e0bd;*/
+    --clr-accent:rgba(84,168,221);
+
+    --fs-h1 :3rem;
+    --fs-h2 :2.25rem;
+    --fs-h3 :1.25rem;
+    --fs-body :1rem;
+
+    --bs: 0.32em 0.32em 0.82em rgba(0,0,0,.27),
+        0.22em 0.22em 0.282em rgba(0,0,0,.27);
+
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1 :44px;
+        --fs-h2 :3.75rem;
+        --fs-h3 :1.5rem;
+        --fs-body :1.125rem;
+
+    }
+}
+
+/*
+General Styling now
+*/
+
+body{
+    background: var(--clr-light);
+    margin: 1px;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/* TYPOGRAPHY   */
+
+h1,
+h2,
+h3{
+    line-height: 1;
+    margin: 0;
+}
+
+h1{ font-size: var(--fs-h1)}
+h2{ font-size: var(--fs-h2)}
+h3{ font-size: var(--fs-h3)}
+
+section{
+    padding: 5em 2em;
+}
+
+.section__title{
+margin-bottom: .27em;
+}
+
+.section__title--intro{
+    font-weight: var(--fw-reg);
+
+}
+.section__subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro{
+    background: var(--clr-accent);
+    padding: .25em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1.12em;
+
+}
+
+
+.section__subtitle--intro strong{
+    display: block;
+}
+
+/*  Intro Section */
+
+/* Nav Section */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+
+}
+.logo {
+    top: 1em;
+    max-width: 188px;
+}
+
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5,0,.5,1);
+}
+
+.nav__list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:0;
+    padding: 0;
+}
+
+.nav-link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: var(--clr-accent);
+}
+.nav-toggle{
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    width: 2em;
+    height: 3px;
+    border-radius:1em;
+    transition: transform 250ms ease-in-out;
+    background: var(--clr-accent);
+}
+.hamburger::before,
+.hamburger::after{
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: var(--clr-accent);
+}
+
+.hamburger::before {top: 6px;}
+.hamburger::after{bottom: 6px}
+
+.nav-open .nav{
+    transform: translateX(0);
+}
+
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.intro{
+    position: relative;
+}
+
+.intro__image{
+    box-shadow: var(--bs);
+    border-radius: 21px;
+}
+
+.section__subtitle--intro{
+    display: inline-block;
+
+}
+strong {font-weight: bold}
+@media (min-width: 800px) {
+    .intro{
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+        'img title'
+        'img subtitle'
+    ;
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__image{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro{
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -2em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+.footer{
+    text-align: center;
+    margin-bottom: .2em;
+}
+
+.footer-link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+}
+
+.horizontalLine{
+    margin-right: 55px;
+    margin-left: 55px;
+}
+
+.AllInOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginButton{
+    background-color: var(--clr-light);
+    border-radius: 8px;
+    padding: 15px 31px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: var(--bs);
+    border: .124em solid rgb(141,198,62);
+
+}
+
+.loginButton:hover{
+    background-color:rgb(141,198,62);
+}
+
+.LogInInput{
+    /*border: .111em solid rgb(26,168,157);*/
+    /*border: .111em solid rgb(141,198,62);*/
+    border: .111em solid rgb(253,176,67);
+    /*border: .111em solid rgb(243,89,43);*/
+    /*border: .111em solid rgb(213,151,58);*/
+    border-radius: 8px;
+    padding: 15px 31px;
+    box-shadow: var(--bs);
+}
+
+.my-button-1,
+.my-button-2,
+.my-button-3,
+.my-button-4,
+.my-button-5,
+.my-button-6{
+    background-color: var(--clr-accent);
+    border: .124em;
+    border-radius: 8px;
+    padding: 15px 31px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: var(--bs);
+}
+.my-button-1:hover,
+.my-button-2:hover,
+.my-button-3:hover,
+.my-button-4:hover,
+.my-button-5:hover,
+.my-button-6:hover{
+    background-color: rgb(187 93 22);
+    border: .124em;
+    border-radius: 12px;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transform: rotate(350deg);
+}
+
+ /* Text Change on Hover for Texts in a Button */
+
+/* Button 1 */
+.my-button-1:hover span {
+    display:none
+}
+
+.my-button-1:hover::before {
+    content:"शुल्क व्यवस्थापन";
+}
+
+/*Button 2*/
+.my-button-2:hover span {
+    display:none
+}
+
+.my-button-2:hover::before {
+    content:"परीक्षा व्यवस्थापन";
+}
+
+/*Button 3*/
+.my-button-3:hover span {
+    display:none
+}
+
+.my-button-3:hover::before {
+    content:"अनलाइन कक्षाहरु";
+}
+
+
+/*Button 4*/
+.my-button-4:hover span {
+    display:none
+}
+
+.my-button-4:hover::before {
+    content:"सूचना";
+}
+
+/*Button 5*/
+.my-button-5:hover span {
+    display:none
+}
+
+.my-button-5:hover::before {
+    content:"अनलाइन हाजिरी";
+}
+
+
+
+.my-button-6:hover span {
+    display:none
+}
+
+.my-button-6:hover::before {
+    content:"अनलाइन प्रशासन";
+}
+
+
+
+.AboutMeModal{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background-color: var(--clr-light);
+    margin: 18% auto;
+    width: 70%;
+    padding: 15%;
+    box-shadow: var(--bs);
+}
+
+.closeBtn{
+    color: #ccc;
+    float: right;
+    font-size: 33px;
+}
+
+.closeBtn:hover,.closeBtn:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.MainCompLogo{
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.progress--bar{
+    height: 0.34em;
+    background-color: var(--clr-light);
+    position: relative;
+    margin-right: 33px;
+    border-radius:33px;
+    margin-left: 33px;
+    box-shadow: var(--bs);
+
+}
+
+.progress--bar .progress--bar-child{
+    position: absolute;
+    height: 100%;
+    background-color: var(--clr-accent);
+    border-radius:33px;
+    animation: progress-animation 6s forwards ;
+
+
+}
+
+@keyframes progress-animation {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
